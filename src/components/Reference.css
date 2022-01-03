@@ -1,0 +1,8 @@
+.Reference {
+	text-decoration: none;
+	color: var(--moderate-blue);
+	font-weight: var(--font-bold);
+}
+.Reference:hover {
+	text-decoration: underline;
+}
