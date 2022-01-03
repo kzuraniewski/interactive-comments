@@ -7,13 +7,8 @@
 	margin-right: 15px;
 }
 
-.UserData .UserData__username {
+.UserData .Reference {
 	color: var(--dark-blue);
-	font-weight: var(--font-bold);
-	text-decoration: none;
-}
-.UserData .UserData__username:hover {
-	text-decoration: underline;
 }
 
 .UserData .UserData__created-at {
