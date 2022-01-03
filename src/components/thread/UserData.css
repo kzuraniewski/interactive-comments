@@ -1,0 +1,21 @@
+.UserData {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+.UserData > *:not(:last-child) {
+	margin-right: 15px;
+}
+
+.UserData .UserData__username {
+	color: var(--dark-blue);
+	font-weight: var(--font-bold);
+	text-decoration: none;
+}
+.UserData .UserData__username:hover {
+	text-decoration: underline;
+}
+
+.UserData .UserData__created-at {
+	color: var(--grayish-blue);
+}
