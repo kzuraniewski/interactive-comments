@@ -1,0 +1,28 @@
+.KarmaCounter {
+	background-color: var(--light-gray);
+	border-radius: 5px;
+	width: 30px;
+	padding: 5px 3px;
+}
+
+.KarmaCounter .KarmaCounter__btn {
+	border: none;
+	background: none;
+	width: 100%;
+	padding: 0;
+}
+.KarmaCounter .KarmaCounter__btn img {
+	transition: 0.1s;
+}
+.KarmaCounter .KarmaCounter__btn:hover img {
+	/* moderate-blue */
+	filter: invert(81%) sepia(10%) saturate(800%) hue-rotate(201deg) brightness(98%) contrast(92%);
+}
+
+.KarmaCounter .KarmaCounter__counter {
+	color: var(--moderate-blue);
+	font-weight: var(--font-medium);
+	text-align: center;
+	user-select: none;
+	margin: 10px 0;
+}
