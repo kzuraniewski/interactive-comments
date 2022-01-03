@@ -1,7 +1,9 @@
 .Reference {
-	text-decoration: none;
+	text-decoration: underline;
+	text-decoration-color: transparent;
 	font-weight: var(--font-bold);
+	transition: 0.1s;
 }
 .Reference:hover {
-	text-decoration: underline;
+	text-decoration-color: var(--font-bold);
 }
