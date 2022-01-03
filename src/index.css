@@ -17,12 +17,14 @@
 
 	/* typography */
 	--font-size: 16px;
-	--font-family: 'https://fonts.google.com/speciman/Rubik';
+	--font-family: 'Rubik', sans-serif;
 	--font-regular: 400;
-	--font-bolder: 500;
-	--font-heavy: 700;
+	--font-medium: 500;
+	--font-bold: 700;
 }
 
 body {
 	box-sizing: content-box;
+	font-family: var(--font-family);
+	font-size: var(--font-size);
 }
