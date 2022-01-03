@@ -11,6 +11,8 @@ function Btn({ src, ...other }) {
 	);
 }
 
+//TODO: proper liking/disliking
+
 export default function KarmaCounter({ karma: initialKarma = 0 }) {
 	const [karma, setKarma] = useState(initialKarma);
 
