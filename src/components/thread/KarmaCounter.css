@@ -1,6 +1,6 @@
 .KarmaCounter {
 	background-color: var(--light-gray);
-	border-radius: 5px;
+	border-radius: var(--border-radius);
 	width: 30px;
 	padding: 5px 3px;
 }
