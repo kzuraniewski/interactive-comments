@@ -1,14 +1,22 @@
 .KarmaCounter {
 	background-color: var(--light-gray);
 	border-radius: var(--border-radius);
-	width: 30px;
-	padding: 5px 3px;
+	padding: 6px;
+	min-width: 70px;
+
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.KarmaCounter > *:not(:last-child) {
+	margin-right: 10px;
 }
 
 .KarmaCounter .KarmaCounter__btn {
 	border: none;
 	background: none;
-	width: 100%;
 	padding: 0;
 }
 .KarmaCounter .KarmaCounter__btn:last-of-type {
@@ -28,5 +36,16 @@
 	font-weight: var(--font-medium);
 	text-align: center;
 	user-select: none;
-	margin: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+	.KarmaCounter {
+		flex-direction: column;
+		min-width: 30px;
+	}
+
+	.KarmaCounter > *:not(:last-child) {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
 }
