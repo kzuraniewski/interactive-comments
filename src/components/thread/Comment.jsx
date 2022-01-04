@@ -14,13 +14,9 @@ const breakpoints = {
 };
 
 export default function Comment({ img, username, createdAt, text, ...other }) {
-	const isDesktop = window.screen.width >= breakpoints.lg;
-
-	console.log(isDesktop);
-
 	return (
 		<div className='Comment' {...other}>
-			{isDesktop && <KarmaCounter />}
+			<KarmaCounter />
 
 			<div>
 				<div className='Comment__header'>
@@ -30,8 +26,6 @@ export default function Comment({ img, username, createdAt, text, ...other }) {
 
 				<Content text={text} />
 			</div>
-
-			{!isDesktop && <KarmaCounter />}
 		</div>
 	);
 }
