@@ -10,10 +10,13 @@
 .ActionBtn.ActionBtn--danger {
 	color: var(--soft-red);
 }
-.ActionBtn:hover {
-	filter: brightness(220%);
-}
 
 .ActionBtn img {
 	margin-right: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+	.ActionBtn:hover {
+		filter: brightness(220%);
+	}
 }

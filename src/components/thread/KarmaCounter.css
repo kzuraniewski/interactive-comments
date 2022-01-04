@@ -26,10 +26,6 @@
 .KarmaCounter .KarmaCounter__btn img {
 	transition: 0.1s;
 }
-.KarmaCounter .KarmaCounter__btn:hover img {
-	/* moderate-blue */
-	filter: invert(81%) sepia(10%) saturate(800%) hue-rotate(201deg) brightness(98%) contrast(92%);
-}
 
 .KarmaCounter .KarmaCounter__counter {
 	color: var(--moderate-blue);
@@ -47,5 +43,11 @@
 	.KarmaCounter > *:not(:last-child) {
 		margin-right: 0;
 		margin-bottom: 10px;
+	}
+
+	.KarmaCounter .KarmaCounter__btn:hover img {
+		/* moderate-blue */
+		filter: invert(81%) sepia(10%) saturate(800%) hue-rotate(201deg) brightness(98%)
+			contrast(92%);
 	}
 }
