@@ -1,7 +1,10 @@
 :root {
-	/* layout */
-	--mobile: 375px;
-	--desktop: 1440px;
+	/* breakpoints */
+	--screen-sm: 576px;
+	--screen-md: 768px;
+	--screen-lg: 992px;
+	--screen-xl: 1200px;
+	--screen-xxl: 1400px;
 
 	/* primary colors */
 	--moderate-blue: #5457b6;
