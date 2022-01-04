@@ -1,7 +1,7 @@
 import React from 'react';
 import './Comment.css';
 import Content from '../Content';
-import ActionBtn from './ActionBtn';
+import Actions from './Actions';
 import KarmaCounter from './KarmaCounter';
 import UserData from './UserData';
 
@@ -14,18 +14,35 @@ const breakpoints = {
 };
 
 export default function Comment({ img, username, createdAt, text, ...other }) {
+	const isDesktop = window.screen.width >= breakpoints.lg;
+
 	return (
 		<div className='Comment' {...other}>
-			<KarmaCounter />
+			{isDesktop ? (
+				<>
+					<KarmaCounter />
 
-			<div>
-				<div className='Comment__header'>
+					<div>
+						<div className='Comment__strip'>
+							<UserData img={img} username={username} createdAt={createdAt} />
+							<Actions reply />
+						</div>
+
+						<Content text={text} />
+					</div>
+				</>
+			) : (
+				<>
 					<UserData img={img} username={username} createdAt={createdAt} />
-					<ActionBtn theme='reply' text='Reply' />
-				</div>
 
-				<Content text={text} />
-			</div>
+					<Content text={text} />
+
+					<div className='Comment__strip'>
+						<KarmaCounter />
+						<Actions reply />
+					</div>
+				</>
+			)}
 		</div>
 	);
 }

@@ -1,25 +1,32 @@
 .Comment {
 	display: flex;
 	align-items: flex-start;
-	flex-direction: column-reverse;
+	flex-direction: column;
 
 	padding: 20px;
 	border-radius: var(--border-radius);
 	background-color: var(--white);
 }
+
 .Comment > *:not(:last-child) {
-	margin-right: 20px;
+	margin-bottom: 15px;
 }
 
-.Comment .Comment__header {
+.Comment .Comment__strip {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	width: 100%;
 }
 
 /* md */
 @media screen and (min-width: 768px) {
 	.Comment {
 		flex-direction: row;
+	}
+
+	.Comment > *:not(:last-child) {
+		margin-right: 20px;
 	}
 }
