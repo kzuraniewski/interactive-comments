@@ -1,9 +1,9 @@
 import React from 'react';
 import './Comment.css';
 import Content from '../Content';
+import ActionBtn from './ActionBtn';
 import KarmaCounter from './KarmaCounter';
 import UserData from './UserData';
-import Actions from './Actions';
 
 const breakpoints = {
 	sm: 576,
@@ -16,13 +16,16 @@ const breakpoints = {
 export default function Comment({ img, username, createdAt, text, ...other }) {
 	return (
 		<div className='Comment' {...other}>
-			<UserData img={img} username={username} createdAt={createdAt} />
-
-			<Content text={text} />
-
 			<KarmaCounter />
 
-			<Actions reply />
+			<div>
+				<div className='Comment__header'>
+					<UserData img={img} username={username} createdAt={createdAt} />
+					<ActionBtn theme='reply' text='Reply' />
+				</div>
+
+				<Content text={text} />
+			</div>
 		</div>
 	);
 }

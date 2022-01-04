@@ -1,28 +1,25 @@
 .Comment {
 	display: flex;
 	align-items: flex-start;
-	flex-wrap: wrap;
+	flex-direction: column-reverse;
 
 	padding: 20px;
 	border-radius: var(--border-radius);
 	background-color: var(--white);
 }
-.Comment > * {
-	margin-bottom: 10px;
+.Comment > *:not(:last-child) {
+	margin-right: 20px;
 }
 
-.Comment .UserData {
-	width: 100%;
-}
-
-.Comment .Actions {
-	margin-left: auto;
-	transform: translateY(7px);
+.Comment .Comment__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 /* md */
 @media screen and (min-width: 768px) {
 	.Comment {
-		/* flex-direction: row; */
+		flex-direction: row;
 	}
 }
