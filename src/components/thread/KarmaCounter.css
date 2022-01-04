@@ -1,0 +1,53 @@
+.KarmaCounter {
+	background-color: var(--very-light-gray);
+	border-radius: var(--border-radius);
+	padding: 6px;
+	min-width: 70px;
+
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.KarmaCounter > *:not(:last-child) {
+	margin-right: 10px;
+}
+
+.KarmaCounter .KarmaCounter__btn {
+	border: none;
+	background: none;
+	padding: 0;
+}
+.KarmaCounter .KarmaCounter__btn:last-of-type {
+	transform: translateY(-3px);
+}
+
+.KarmaCounter .KarmaCounter__btn img {
+	transition: 0.1s;
+}
+
+.KarmaCounter .KarmaCounter__counter {
+	color: var(--moderate-blue);
+	font-weight: var(--font-medium);
+	text-align: center;
+	user-select: none;
+}
+
+@media screen and (min-width: 992px) {
+	.KarmaCounter {
+		flex-direction: column;
+		min-width: 30px;
+	}
+
+	.KarmaCounter > *:not(:last-child) {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	.KarmaCounter .KarmaCounter__btn:hover img {
+		/* moderate-blue */
+		filter: invert(81%) sepia(10%) saturate(800%) hue-rotate(201deg) brightness(98%)
+			contrast(92%);
+	}
+}

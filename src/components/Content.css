@@ -1,0 +1,13 @@
+.Content {
+	color: var(--grayish-blue);
+}
+
+.Content .Reference {
+	color: var(--moderate-blue);
+}
+
+@media screen and (min-width: 992px) {
+	.Content {
+		margin-top: 10px;
+	}
+}

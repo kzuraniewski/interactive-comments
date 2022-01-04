@@ -1,0 +1,15 @@
+.UserData {
+	display: flex;
+	align-items: center;
+}
+.UserData > *:not(:last-child) {
+	margin-right: 15px;
+}
+
+.UserData .Reference {
+	color: var(--dark-blue);
+}
+
+.UserData .UserData__created-at {
+	color: var(--grayish-blue);
+}
