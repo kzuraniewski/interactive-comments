@@ -15,7 +15,7 @@
 	margin-right: 0.5em;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 	.ActionBtn:hover {
 		filter: brightness(220%);
 	}
