@@ -1,4 +1,5 @@
 import React from 'react';
+import './Content.css';
 import Reference from './Reference';
 
 export default function Content({ text }) {
