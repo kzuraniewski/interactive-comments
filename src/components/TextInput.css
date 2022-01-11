@@ -1,0 +1,25 @@
+.TextInput {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.TextInput > *:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.TextInput .TextInput__textarea {
+	width: 100%;
+	padding: 10px 20px;
+	resize: none;
+
+	border-radius: var(--border-radius);
+	border: 1px solid var(--light-gray);
+}
+.TextInput .TextInput__textarea:focus {
+	outline: solid var(--moderate-blue) 1px;
+}
+
+.TextInput .Btn {
+	margin-left: auto;
+}
