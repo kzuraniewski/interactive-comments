@@ -4,15 +4,12 @@
 	align-items: center;
 }
 
-.TextInput > *:not(:last-child) {
-	margin-bottom: 15px;
-}
-
 .TextInput .TextInput__textarea {
 	width: 100%;
 	padding: 10px 20px;
 	resize: none;
 	min-height: 4em;
+	margin-bottom: 15px;
 
 	border-radius: var(--border-radius);
 	border: 1px solid var(--light-gray);
