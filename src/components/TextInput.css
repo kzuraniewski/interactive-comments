@@ -12,6 +12,7 @@
 	width: 100%;
 	padding: 10px 20px;
 	resize: none;
+	min-height: 4em;
 
 	border-radius: var(--border-radius);
 	border: 1px solid var(--light-gray);
