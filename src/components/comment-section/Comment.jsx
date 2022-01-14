@@ -16,19 +16,20 @@ const breakpoints = {
 export default function Comment({ comment, onReply, ...other }) {
 	const isDesktop = window.screen.width >= breakpoints.lg;
 	const {
+		content,
+		createdAt,
+		score,
 		user: {
 			image: { png: img },
 			username,
 		},
-		createdAt,
-		content,
 	} = comment;
 
 	return (
 		<div className='Comment' {...other}>
 			{isDesktop ? (
 				<>
-					<KarmaCounter />
+					<KarmaCounter karma={score} />
 
 					<div>
 						<div className='Comment__strip'>
@@ -46,7 +47,7 @@ export default function Comment({ comment, onReply, ...other }) {
 					<Content text={content} />
 
 					<div className='Comment__strip'>
-						<KarmaCounter />
+						<KarmaCounter karma={score} />
 						<Actions reply={onReply} />
 					</div>
 				</>
