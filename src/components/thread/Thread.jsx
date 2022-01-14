@@ -5,11 +5,11 @@ export default function Thread({ comment }) {
 	return (
 		<>
 			<div className='Thread'>
-				<CommentWrapper commentData={comment} />
+				<CommentWrapper comment={comment} />
 
 				<div className='Thread__replies'>
 					{comment.replies.map((reply, index) => (
-						<CommentWrapper key={index} commentData={reply} />
+						<CommentWrapper key={index} comment={reply} />
 					))}
 				</div>
 			</div>
