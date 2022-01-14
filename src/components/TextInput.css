@@ -2,6 +2,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	padding: 15px;
 }
 
 .TextInput .TextInput__textarea {
