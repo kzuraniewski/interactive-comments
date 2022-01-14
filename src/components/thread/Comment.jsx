@@ -13,7 +13,7 @@ const breakpoints = {
 	xxl: 1400,
 };
 
-export default function Comment({ commentData, onReply, ...other }) {
+export default function Comment({ comment, onReply, ...other }) {
 	const isDesktop = window.screen.width >= breakpoints.lg;
 	const {
 		user: {
@@ -22,7 +22,7 @@ export default function Comment({ commentData, onReply, ...other }) {
 		},
 		createdAt,
 		content,
-	} = commentData;
+	} = comment;
 
 	return (
 		<div className='Comment' {...other}>
