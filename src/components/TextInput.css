@@ -9,15 +9,17 @@
 }
 
 .TextInput .TextInput__textarea {
-	width: 100%;
-	padding: 10px 20px;
 	resize: none;
-	min-height: 4em;
-	margin-bottom: 15px;
 	overflow: hidden;
 
+	width: 100%;
+	padding: 10px 20px;
+	min-height: 4em;
+
+	margin-bottom: 15px;
 	border-radius: var(--border-radius);
 	border: 1px solid var(--light-gray);
+	font: inherit;
 }
 .TextInput .TextInput__textarea:focus {
 	outline: solid var(--moderate-blue) 1px;
