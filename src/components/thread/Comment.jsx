@@ -13,8 +13,9 @@ const breakpoints = {
 	xxl: 1400,
 };
 
-export default function Comment({ img, username, createdAt, text, ...other }) {
+export default function Comment({ commentData, ...other }) {
 	const isDesktop = window.screen.width >= breakpoints.lg;
+	const { image, username, createdAt, content } = commentData;
 
 	return (
 		<div className='Comment' {...other}>
@@ -24,18 +25,18 @@ export default function Comment({ img, username, createdAt, text, ...other }) {
 
 					<div>
 						<div className='Comment__strip'>
-							<UserData img={img} username={username} createdAt={createdAt} />
+							<UserData img={image.png} username={username} createdAt={createdAt} />
 							<Actions reply />
 						</div>
 
-						<Content text={text} />
+						<Content text={content} />
 					</div>
 				</>
 			) : (
 				<>
-					<UserData img={img} username={username} createdAt={createdAt} />
+					<UserData img={image.png} username={username} createdAt={createdAt} />
 
-					<Content text={text} />
+					<Content text={content} />
 
 					<div className='Comment__strip'>
 						<KarmaCounter />
