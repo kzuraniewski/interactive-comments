@@ -9,7 +9,7 @@ export default function CommentWrapper({ comment }) {
 
 	return (
 		<div className='CommentWrapper'>
-			<Comment comment={comment} onReply={onReply} />
+			<Comment comment={comment} onReply={() => setReplyMode((replyMode) => !replyMode)} />
 
 			{replyMode && (
 				<TextInput img={data.currentUser.image.png} placeholder='Add a reply...' />
