@@ -5,7 +5,7 @@ import './TextInput.css';
 import Btn from './Btn';
 
 export default function TextInput({ img, placeholder = '' }) {
-	const [value, setValue] = useState(localStorage.getItem('typedContent'));
+	const [value, setValue] = useState('');
 
 	return (
 		<div className='TextInput'>
@@ -14,10 +14,7 @@ export default function TextInput({ img, placeholder = '' }) {
 				name='comment'
 				placeholder={placeholder}
 				value={value}
-				onChange={(e) => {
-					setValue(e.target.value);
-					localStorage.setItem('typedContent', e.target.value);
-				}}
+				onChange={(e) => setValue(e.target.value)}
 			></TextareaAutosize>
 
 			<Avatar src={img} />

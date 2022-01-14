@@ -5,7 +5,7 @@ import TextInput from '../TextInput';
 import data from '../../data';
 
 export default function CommentWrapper({ comment }) {
-	const [replyMode, setReplyMode] = useState(localStorage.getItem('typedContent').length > 0);
+	const [replyMode, setReplyMode] = useState(false);
 
 	return (
 		<div className='CommentWrapper'>
