@@ -17,3 +17,5 @@ export default function CommentWrapper({ comment }) {
 		</div>
 	);
 }
+
+// TODO: on replyMode set to true, set every other CommentWrapper's replyMode to false
