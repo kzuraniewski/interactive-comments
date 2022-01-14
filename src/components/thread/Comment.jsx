@@ -15,7 +15,14 @@ const breakpoints = {
 
 export default function Comment({ commentData, ...other }) {
 	const isDesktop = window.screen.width >= breakpoints.lg;
-	const { image, username, createdAt, content } = commentData;
+	const {
+		user: {
+			image: { png: img },
+			username,
+		},
+		createdAt,
+		content,
+	} = commentData;
 
 	return (
 		<div className='Comment' {...other}>
@@ -25,7 +32,7 @@ export default function Comment({ commentData, ...other }) {
 
 					<div>
 						<div className='Comment__strip'>
-							<UserData img={image.png} username={username} createdAt={createdAt} />
+							<UserData img={img} username={username} createdAt={createdAt} />
 							<Actions reply />
 						</div>
 
@@ -34,7 +41,7 @@ export default function Comment({ commentData, ...other }) {
 				</>
 			) : (
 				<>
-					<UserData img={image.png} username={username} createdAt={createdAt} />
+					<UserData img={img} username={username} createdAt={createdAt} />
 
 					<Content text={content} />
 
