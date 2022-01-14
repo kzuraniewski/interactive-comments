@@ -13,7 +13,7 @@ const breakpoints = {
 	xxl: 1400,
 };
 
-export default function Comment({ commentData, ...other }) {
+export default function Comment({ commentData, onReply, ...other }) {
 	const isDesktop = window.screen.width >= breakpoints.lg;
 	const {
 		user: {
@@ -33,7 +33,7 @@ export default function Comment({ commentData, ...other }) {
 					<div>
 						<div className='Comment__strip'>
 							<UserData img={img} username={username} createdAt={createdAt} />
-							<Actions reply />
+							<Actions reply={onReply} />
 						</div>
 
 						<Content text={content} />
@@ -47,10 +47,12 @@ export default function Comment({ commentData, ...other }) {
 
 					<div className='Comment__strip'>
 						<KarmaCounter />
-						<Actions reply />
+						<Actions reply={onReply} />
 					</div>
 				</>
 			)}
 		</div>
 	);
 }
+
+//TODO: RWD moved to css entirely
