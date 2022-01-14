@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './KarmaCounter.css';
 import plusIcon from '../../images/icon-plus.svg';
 import minusIcon from '../../images/icon-minus.svg';
