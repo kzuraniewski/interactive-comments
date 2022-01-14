@@ -1,4 +1,5 @@
 import React from 'react';
+import './Thread.css';
 import CommentWrapper from './CommentWrapper';
 
 export default function Thread({ comment }) {

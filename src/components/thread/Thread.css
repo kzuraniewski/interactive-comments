@@ -1,0 +1,4 @@
+.Thread .Thread__replies {
+	border-left: 2px solid var(--light-gray);
+	padding-left: 15px;
+}
