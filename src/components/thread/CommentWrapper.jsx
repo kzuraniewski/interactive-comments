@@ -4,13 +4,13 @@ import Comment from './Comment';
 import TextInput from '../TextInput';
 import data from '../../data';
 
-export default function CommentWrapper({ commentData }) {
+export default function CommentWrapper({ comment }) {
 	const [replyMode, setReplyMode] = useState(localStorage.getItem('typedContent').length > 0);
 
 	return (
 		<div className='CommentWrapper'>
 			<Comment
-				commentData={commentData}
+				commentData={comment}
 				onReply={() => setReplyMode((replyMode) => !replyMode)}
 			/>
 
