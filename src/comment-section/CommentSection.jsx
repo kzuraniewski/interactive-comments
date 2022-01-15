@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TextInput from '../TextInput';
+import TextInput from './TextInput';
 import './CommentSection.css';
-import Thread from './Thread';
+import Thread from './thread/Thread';
 
 export default function CommentSection({ currentUser, comments }) {
 	const [replyAt, setReplyAt] = useState(null);
