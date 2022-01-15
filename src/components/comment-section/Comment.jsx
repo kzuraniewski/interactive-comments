@@ -87,7 +87,20 @@ export default function Comment({ comment, onReply = null, ...other }) {
 						currentUser={currentUser}
 					/>
 
-					<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
+					{editMode ? (
+						<>
+							<Textarea
+								content={content}
+								value={textareaValue}
+								setValue={setTextareaValue}
+							/>
+
+							<Btn text='UPDATE' onClick={() => setEditMode(false)} />
+							{/* doesn't update content for now */}
+						</>
+					) : (
+						<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
+					)}
 
 					<div className='Comment__strip'>
 						<KarmaCounter karma={score} />
