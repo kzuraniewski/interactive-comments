@@ -55,6 +55,7 @@ export default function Comment({ comment, onReply = null, ...other }) {
 							{currentUser ? (
 								<Actions
 									delete={() => {}}
+									// exitting edit mode through action will dismiss changes
 									edit={() => setEditMode((editMode) => !editMode)}
 								/>
 							) : (
