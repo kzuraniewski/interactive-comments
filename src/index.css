@@ -29,8 +29,11 @@
 	--border-radius: 10px;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
-	box-sizing: content-box;
 	font-family: var(--font-family);
 	font-size: var(--font-size);
 	line-height: normal;
