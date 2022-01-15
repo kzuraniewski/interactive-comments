@@ -1,0 +1,51 @@
+.TextInput {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	padding: 15px;
+}
+
+.TextInput .TextInput__textarea {
+	resize: none;
+	overflow: hidden;
+
+	width: 100%;
+	padding: 10px 20px;
+	min-height: 4em;
+
+	margin-bottom: 15px;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--light-gray);
+	font: inherit;
+}
+.TextInput .TextInput__textarea:focus {
+	outline: solid var(--moderate-blue) 1px;
+}
+
+.TextInput .Btn {
+	margin-left: auto;
+}
+
+@media screen and (min-width: 992px) {
+	.TextInput {
+		align-items: flex-start;
+		flex-wrap: nowrap;
+	}
+	.TextInput > *:not(:last-child) {
+		margin-bottom: 0;
+		margin-right: 15px;
+	}
+
+	.TextInput .TextInput__textarea {
+		flex: 1 1 auto;
+		order: 1;
+	}
+
+	.TextInput .Btn {
+		order: 2;
+		flex: 1 1 inherit;
+	}
+}
