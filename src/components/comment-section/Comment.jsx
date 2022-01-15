@@ -23,6 +23,7 @@ export default function Comment({ comment, onReply, ...other }) {
 			image: { png: img },
 			username,
 		},
+		replyingTo,
 	} = comment;
 
 	return (
@@ -37,14 +38,14 @@ export default function Comment({ comment, onReply, ...other }) {
 							<Actions reply={onReply} />
 						</div>
 
-						<Content text={content} />
+						<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
 					</div>
 				</>
 			) : (
 				<>
 					<UserData img={img} username={username} createdAt={createdAt} />
 
-					<Content text={content} />
+					<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
 
 					<div className='Comment__strip'>
 						<KarmaCounter karma={score} />
