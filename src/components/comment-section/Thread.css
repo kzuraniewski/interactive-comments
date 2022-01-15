@@ -2,3 +2,10 @@
 	border-left: 2px solid var(--light-gray);
 	padding-left: 15px;
 }
+
+@media screen and (min-width: 992px) {
+	.Thread .Thread__replies {
+		padding-left: 40px;
+		margin-left: 40px;
+	}
+}
