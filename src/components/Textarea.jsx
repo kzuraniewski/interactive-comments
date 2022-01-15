@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import './Textarea.css';
 
-export default function Textarea({ content = '', ...other }) {
-	const [value, setValue] = useState(content);
-
+export default function Textarea({ content = '', value, setValue, ...other }) {
 	return (
 		<TextareaAutosize
 			className='Textarea'
