@@ -1,0 +1,5 @@
+.Modal {
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	padding: 15px;
+}
