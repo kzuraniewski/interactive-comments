@@ -8,6 +8,10 @@
 	background-color: var(--white);
 }
 
+.Comment > *:not(:last-child) {
+	margin-bottom: 15px;
+}
+
 .Comment .Comment__strip {
 	display: flex;
 	align-items: center;
