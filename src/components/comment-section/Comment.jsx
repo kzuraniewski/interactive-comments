@@ -14,13 +14,7 @@ const breakpoints = {
 	xxl: 1400,
 };
 
-export default function Comment({
-	comment,
-	onReply = null,
-	onDelete = null,
-	onEdit = null,
-	...other
-}) {
+export default function Comment({ comment, onReply = null, ...other }) {
 	const isDesktop = window.screen.width >= breakpoints.lg;
 	const {
 		content,
@@ -51,7 +45,7 @@ export default function Comment({
 							/>
 
 							{currentUser ? (
-								<Actions delete={onDelete} edit={onEdit} />
+								<Actions delete={() => {}} edit={() => {}} />
 							) : (
 								<Actions reply={onReply} />
 							)}
@@ -75,7 +69,7 @@ export default function Comment({
 						<KarmaCounter karma={score} />
 
 						{currentUser ? (
-							<Actions delete={onDelete} edit={onEdit} />
+							<Actions delete={() => {}} edit={() => {}} />
 						) : (
 							<Actions reply={onReply} />
 						)}
