@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
-import TextareaAutosize from 'react-textarea-autosize';
+import React from 'react';
 import Avatar from './Avatar';
 import './TextInput.css';
 import Btn from './Btn';
+import Textarea from './Textarea';
 
 export default function TextInput({ img, placeholder = '' }) {
-	const [value, setValue] = useState('');
-
 	return (
 		<div className='TextInput'>
-			<TextareaAutosize
-				className='TextInput__textarea'
-				name='comment'
-				placeholder={placeholder}
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
-			></TextareaAutosize>
+			<Textarea placeholder={placeholder} />
 
 			<Avatar src={img} />
 
