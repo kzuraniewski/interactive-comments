@@ -13,3 +13,13 @@
 .UserData .UserData__created-at {
 	color: var(--grayish-blue);
 }
+
+.UserData .UserData__you {
+	color: var(--white);
+	font-size: 12px;
+	font-weight: var(--font-medium);
+
+	padding: 1px 6px 2px 6px;
+	background-color: var(--moderate-blue);
+	border-radius: 2px;
+}
