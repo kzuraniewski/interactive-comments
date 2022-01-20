@@ -27,6 +27,7 @@
 
 .Comment .Actions {
 	grid-area: actions;
+	margin-left: auto;
 }
 
 .Comment .Btn {
