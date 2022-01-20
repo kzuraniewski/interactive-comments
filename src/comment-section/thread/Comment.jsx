@@ -16,7 +16,7 @@ const breakpoints = {
 	xxl: 1400,
 };
 
-export default function Comment({ comment, onReply = null, ...other }) {
+export default function Comment({ comment, onReply = null, openModal, ...other }) {
 	const {
 		content,
 		createdAt,
@@ -54,7 +54,7 @@ export default function Comment({ comment, onReply = null, ...other }) {
 							{/* edit & delete for currentUser, reply otherwise */}
 							{currentUser ? (
 								<Actions
-									delete={() => {}}
+									delete={openModal}
 									// exitting edit mode through action will dismiss changes
 									edit={() => setEditMode((editMode) => !editMode)}
 								/>
@@ -108,7 +108,7 @@ export default function Comment({ comment, onReply = null, ...other }) {
 
 						{currentUser ? (
 							<Actions
-								delete={() => {}}
+								delete={openModal}
 								edit={() => setEditMode((editMode) => !editMode)}
 							/>
 						) : (

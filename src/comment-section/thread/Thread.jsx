@@ -2,11 +2,11 @@ import React from 'react';
 import './Thread.css';
 import CommentWrapper from './CommentWrapper';
 
-export default function Thread({ comment, replyAt, setReplyAt }) {
+export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 	return (
 		<>
 			<div className='Thread'>
-				<CommentWrapper comment={comment} replyAt={replyAt} setReplyAt={setReplyAt} />
+				<CommentWrapper comment={comment} replyAt={replyAt} setReplyAt={setReplyAt} openModal={openModal} />
 
 				{comment.replies.length > 0 && (
 					<div className='Thread__replies'>
@@ -16,6 +16,7 @@ export default function Thread({ comment, replyAt, setReplyAt }) {
 								comment={reply}
 								replyAt={replyAt}
 								setReplyAt={setReplyAt}
+								openModal={openModal}
 							/>
 						))}
 					</div>
