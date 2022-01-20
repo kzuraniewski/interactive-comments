@@ -39,9 +39,4 @@
 	.Comment {
 		flex-direction: row;
 	}
-
-	.Comment > *:not(:last-child) {
-		margin-right: 20px;
-		margin-bottom: 0;
-	}
 }
