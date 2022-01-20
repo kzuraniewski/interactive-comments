@@ -20,6 +20,19 @@
 	width: 100%;
 }
 
+.Comment .Comment__content-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.Comment .Comment__content-wrapper > *:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.Comment .Btn {
+	align-self: flex-end;
+}
+
 /* md */
 @media screen and (min-width: 992px) {
 	.Comment {

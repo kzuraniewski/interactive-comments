@@ -29,9 +29,16 @@
 	--border-radius: 10px;
 }
 
-body {
-	box-sizing: content-box;
+* {
+	box-sizing: border-box;
+}
+
+html {
 	font-family: var(--font-family);
 	font-size: var(--font-size);
+	line-height: normal;
+}
+
+body {
 	background-color: var(--very-light-gray);
 }

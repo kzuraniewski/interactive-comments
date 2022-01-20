@@ -4,7 +4,7 @@ import Comment from './Comment';
 import TextInput from '../TextInput';
 import data from '../../data';
 
-export default function CommentWrapper({ comment, replyAt, setReplyAt }) {
+export default function CommentWrapper({ comment, replyAt, setReplyAt, openModal }) {
 	const [replyMode, setReplyMode] = useState(false);
 	const ref = useRef(null);
 
@@ -17,6 +17,7 @@ export default function CommentWrapper({ comment, replyAt, setReplyAt }) {
 			<Comment
 				comment={comment}
 				onReply={() => setReplyAt((old) => (old !== ref ? ref : null))}
+				openModal={openModal}
 			/>
 
 			{replyMode && (
