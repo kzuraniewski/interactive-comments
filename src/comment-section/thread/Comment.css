@@ -13,10 +13,6 @@
 	background-color: var(--white);
 }
 
-.Comment > *:not(:last-child) {
-	margin-bottom: 15px;
-}
-
 .Comment .UserData {
 	grid-area: user-data;
 }
