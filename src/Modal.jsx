@@ -11,7 +11,7 @@ export default function Modal({ isOpen, title, description = '', cancel = 'CANCE
 				{description && <p className='Modal__description'>{description}</p>}
 
 				<div className='Modal__actions'>
-					<Btn text={cancel} theme='cancel' />
+					<Btn text={cancel} theme='cancel' onClick={onCancel} />
 
 					<Btn text={confirm} theme='danger' onClick={onConfirm} />
 				</div>
