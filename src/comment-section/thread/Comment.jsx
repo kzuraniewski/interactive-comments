@@ -8,14 +8,6 @@ import data from '../../data';
 import Textarea from '../Textarea';
 import Btn from '../Btn';
 
-const breakpoints = {
-	sm: 576,
-	md: 768,
-	lg: 992,
-	xl: 1200,
-	xxl: 1400,
-};
-
 export default function Comment({ comment, onReply = null, openModal, ...other }) {
 	const {
 		content,
@@ -30,95 +22,42 @@ export default function Comment({ comment, onReply = null, openModal, ...other }
 
 	// check if the comment belongs to the current user
 	const currentUser = username === data.currentUser.username;
-	// check if the device is desktop sized
-	const isDesktop = window.screen.width >= breakpoints.lg;
 
 	const [editMode, setEditMode] = useState(false);
 	const [textareaValue, setTextareaValue] = useState(content);
 
 	return (
 		<div className='Comment' {...other}>
-			{isDesktop ? (
+			<UserData
+				img={img}
+				username={username}
+				createdAt={createdAt}
+				currentUser={currentUser}
+			/>
+
+			{editMode ? (
 				<>
-					<KarmaCounter karma={score} />
+					<Textarea content={content} value={textareaValue} setValue={setTextareaValue} />
 
-					<div className='Comment__content-wrapper'>
-						<div className='Comment__strip'>
-							<UserData
-								img={img}
-								username={username}
-								createdAt={createdAt}
-								currentUser={currentUser}
-							/>
-
-							{/* edit & delete for currentUser, reply otherwise */}
-							{currentUser ? (
-								<Actions
-									delete={openModal}
-									// exitting edit mode through action will dismiss changes
-									edit={() => setEditMode((editMode) => !editMode)}
-								/>
-							) : (
-								<Actions reply={onReply} />
-							)}
-						</div>
-
-						{editMode ? (
-							<>
-								<Textarea
-									content={content}
-									value={textareaValue}
-									setValue={setTextareaValue}
-								/>
-
-								<Btn text='UPDATE' onClick={() => setEditMode(false)} />
-								{/* doesn't update content for now */}
-							</>
-						) : (
-							<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
-						)}
-					</div>
+					<Btn text='UPDATE' onClick={() => setEditMode(false)} />
+					{/* doesn't update content for now */}
 				</>
 			) : (
-				<>
-					<UserData
-						img={img}
-						username={username}
-						createdAt={createdAt}
-						currentUser={currentUser}
-					/>
+				<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
+			)}
 
-					{editMode ? (
-						<>
-							<Textarea
-								content={content}
-								value={textareaValue}
-								setValue={setTextareaValue}
-							/>
+			<KarmaCounter karma={score} />
 
-							<Btn text='UPDATE' onClick={() => setEditMode(false)} />
-							{/* doesn't update content for now */}
-						</>
-					) : (
-						<Content text={replyingTo ? `@${replyingTo} ` + content : content} />
-					)}
-
-					<div className='Comment__strip'>
-						<KarmaCounter karma={score} />
-
-						{currentUser ? (
-							<Actions
-								delete={openModal}
-								edit={() => setEditMode((editMode) => !editMode)}
-							/>
-						) : (
-							<Actions reply={onReply} />
-						)}
-					</div>
-				</>
+			{/* edit & delete for currentUser, reply otherwise */}
+			{currentUser ? (
+				<Actions
+					delete={openModal}
+					// exitting edit mode through action will dismiss changes
+					edit={() => setEditMode((editMode) => !editMode)}
+				/>
+			) : (
+				<Actions reply={onReply} />
 			)}
 		</div>
 	);
 }
-
-//TODO: RWD moved to css entirely
