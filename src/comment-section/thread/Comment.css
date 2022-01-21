@@ -1,6 +1,6 @@
 .Comment {
 	display: grid;
-	grid-template-columns: min-content auto min-content;
+	grid-template-columns: min-content 1fr min-content;
 	grid-template-rows: min-content min-content min-content;
 	gap: 0px 0px;
 	grid-template-areas:
@@ -38,6 +38,14 @@
 /* md */
 @media screen and (min-width: 992px) {
 	.Comment {
-		flex-direction: row;
+		grid-template-areas:
+			'karma-counter user-data actions'
+			'karma-counter content content'
+			'karma-counter content content';
+	}
+
+	.Comment .KarmaCounter {
+		align-self: flex-start;
+		margin-right: 15px;
 	}
 }
