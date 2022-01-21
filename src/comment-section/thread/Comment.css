@@ -1,12 +1,12 @@
 .Comment {
 	display: grid;
-	grid-template-columns: min-content auto;
+	grid-template-columns: min-content auto min-content;
 	grid-template-rows: min-content min-content min-content;
 	gap: 0px 0px;
 	grid-template-areas:
-		'user-data user-data'
-		'content content'
-		'karma-counter actions';
+		'user-data user-data user-data'
+		'content content content'
+		'karma-counter actions actions';
 
 	padding: 20px;
 	border-radius: var(--border-radius);
