@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './CommentWrapper.css';
+import './ThreadHead.css';
 import Comment from './Comment';
 import TextInput from '../TextInput';
 import data from '../../data';
 
-export default function CommentWrapper({ comment, replyAt, setReplyAt, openModal }) {
+export default function ThreadHead({ comment, replyAt, setReplyAt, openModal }) {
 	const [replyMode, setReplyMode] = useState(false);
 	const ref = useRef(null);
 
@@ -13,10 +13,10 @@ export default function CommentWrapper({ comment, replyAt, setReplyAt, openModal
 	}, [replyAt]);
 
 	return (
-		<div ref={ref} className='CommentWrapper'>
+		<div ref={ref} className='ThreadHead'>
 			<Comment
 				comment={comment}
-				onReply={() => setReplyAt((old) => (old !== ref ? ref : null))}
+				onReply={() => setReplyAt(old => (old !== ref ? ref : null))}
 				openModal={openModal}
 			/>
 

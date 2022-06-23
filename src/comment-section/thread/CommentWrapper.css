@@ -1,7 +1,0 @@
-.CommentWrapper {
-	margin-bottom: 15px;
-}
-
-.CommentWrapper > *:not(:last-child) {
-	margin-bottom: 7px;
-}

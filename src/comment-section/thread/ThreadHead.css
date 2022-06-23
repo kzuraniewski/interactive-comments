@@ -1,0 +1,7 @@
+.ThreadHead {
+	margin-bottom: 15px;
+}
+
+.ThreadHead > *:not(:last-child) {
+	margin-bottom: 7px;
+}
