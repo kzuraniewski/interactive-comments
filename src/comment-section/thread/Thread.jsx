@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import TextInput from '../TextInput';
 import Comment from './Comment';
 import './Thread.css';
 import ThreadHead from './ThreadHead';
+import data from '../../data';
 
 export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
+	const repliesRef = useRef(null);
+
 	return (
 		<>
 			<div className='Thread'>
@@ -15,15 +19,22 @@ export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 				/>
 
 				{comment.replies.length > 0 && (
-					<div className='Thread__replies'>
+					<div ref={repliesRef} className='Thread__replies'>
 						{comment.replies.map((reply, index) => (
 							<Comment
 								key={index}
 								comment={reply}
 								openModal={openModal}
-								onReply={() => {}}
+								onReply={() => setReplyAt(repliesRef)}
 							/>
 						))}
+
+						{repliesRef === replyAt && (
+							<TextInput
+								img={data.currentUser.image.png}
+								placeholder='Add a reply...'
+							/>
+						)}
 					</div>
 				)}
 			</div>
