@@ -1,0 +1,28 @@
+.Btn {
+	text-transform: uppercase;
+	font-weight: var(--font-bold);
+	color: var(--white);
+
+	background-color: var(--moderate-blue);
+	border-width: 0;
+	border-radius: var(--border-radius);
+	padding: 15px 25px;
+
+	cursor: pointer;
+	display: flex;
+	transition: 0.1s;
+}
+
+.Btn.Btn--danger {
+	background-color: var(--pale-red);
+}
+
+.Btn.Btn--cancel {
+	background-color: var(--grayish-blue);
+}
+
+@media screen and (min-width: 992px) {
+	.Btn:hover {
+		filter: brightness(85%);
+	}
+}

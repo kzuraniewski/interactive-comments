@@ -1,0 +1,34 @@
+.TextInput {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	background-color: var(--white);
+	border-radius: var(--border-radius);
+	padding: 15px;
+}
+
+.TextInput .Btn {
+	margin-left: auto;
+}
+
+@media screen and (min-width: 992px) {
+	.TextInput {
+		align-items: flex-start;
+		flex-wrap: nowrap;
+	}
+	.TextInput > *:not(:last-child) {
+		margin-bottom: 0;
+		margin-right: 15px;
+	}
+
+	.TextInput .Textarea {
+		flex: 1 1 auto;
+		order: 1;
+	}
+
+	.TextInput .Btn {
+		order: 2;
+		flex: 1 1 inherit;
+	}
+}

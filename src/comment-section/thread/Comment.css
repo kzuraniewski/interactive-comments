@@ -1,0 +1,51 @@
+.Comment {
+	display: grid;
+	grid-template-columns: min-content 1fr min-content;
+	grid-template-rows: min-content min-content min-content;
+	gap: 0px 0px;
+	grid-template-areas:
+		'user-data user-data user-data'
+		'content content content'
+		'karma-counter actions actions';
+	align-items: center;
+
+	padding: 20px;
+	border-radius: var(--border-radius);
+	background-color: var(--white);
+}
+
+.Comment .UserData {
+	grid-area: user-data;
+}
+
+.Comment .Content {
+	grid-area: content;
+}
+
+.Comment .KarmaCounter {
+	grid-area: karma-counter;
+}
+
+.Comment .Actions {
+	grid-area: actions;
+	margin-left: auto;
+}
+
+.Comment .Btn {
+	align-self: flex-end;
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+	.Comment {
+		grid-template-areas:
+			'karma-counter user-data actions'
+			'karma-counter content content'
+			'karma-counter content content';
+	}
+
+	.Comment .KarmaCounter {
+		align-self: flex-start;
+		margin-right: 15px;
+	}
+}

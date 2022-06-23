@@ -1,0 +1,8 @@
+.Avatar {
+	display: flex;
+}
+
+.Avatar .Avatar__img {
+	border-radius: 50%;
+	width: 1.8rem;
+}

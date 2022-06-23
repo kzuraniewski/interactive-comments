@@ -1,0 +1,7 @@
+.Actions {
+	display: flex;
+}
+
+.Actions > * {
+	margin-right: 10px;
+}

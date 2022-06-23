@@ -1,0 +1,22 @@
+.ActionBtn {
+	color: var(--moderate-blue);
+	font-weight: var(--font-bold);
+	border: none;
+	background: none;
+	cursor: pointer;
+	display: flex;
+	transition: 0.1s;
+}
+.ActionBtn.ActionBtn--danger {
+	color: var(--soft-red);
+}
+
+.ActionBtn img {
+	margin-right: 0.5em;
+}
+
+@media screen and (min-width: 992px) {
+	.ActionBtn:hover {
+		filter: brightness(220%);
+	}
+}

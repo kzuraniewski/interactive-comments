@@ -1,0 +1,8 @@
+.Content {
+	color: var(--grayish-blue);
+	margin: 15px 0;
+}
+
+.Content .Reference {
+	color: var(--moderate-blue);
+}
