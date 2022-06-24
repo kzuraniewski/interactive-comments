@@ -29,7 +29,13 @@ export default function TextInput({
 
 			<Avatar src={img} />
 
-			<Btn text='SEND' onClick={onSend} />
+			<Btn
+				text='SEND'
+				onClick={e => {
+					if (!value.length) return;
+					onSend(e);
+				}}
+			/>
 		</div>
 	);
 }
