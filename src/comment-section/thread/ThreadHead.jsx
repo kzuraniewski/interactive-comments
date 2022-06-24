@@ -21,7 +21,12 @@ export default function ThreadHead({ comment, replyAt, setReplyAt, openModal }) 
 			/>
 
 			{replyMode && (
-				<TextInput img={data.currentUser.image.png} placeholder='Add a reply...' focus />
+				<TextInput
+					img={data.currentUser.image.png}
+					onSend={() => console.log('Reply sent')}
+					placeholder='Add a reply...'
+					focus
+				/>
 			)}
 		</div>
 	);
