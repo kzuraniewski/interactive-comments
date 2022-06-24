@@ -7,6 +7,7 @@ import data from '../../data';
 
 export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 	const repliesRef = useRef(null);
+	const replyTo = useRef(null);
 
 	return (
 		<>
@@ -25,7 +26,10 @@ export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 								key={index}
 								comment={reply}
 								openModal={openModal}
-								onReply={() => setReplyAt(repliesRef)}
+								onReply={() => {
+									setReplyAt(repliesRef);
+									replyTo.current = reply.user.username;
+								}}
 							/>
 						))}
 
@@ -33,6 +37,7 @@ export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 							<TextInput
 								img={data.currentUser.image.png}
 								placeholder='Add a reply...'
+								initialValue={`@${replyTo.current} `}
 							/>
 						)}
 					</div>
