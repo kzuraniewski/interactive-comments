@@ -36,7 +36,10 @@ export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 						{repliesRef === replyAt && (
 							<TextInput
 								img={data.currentUser.image.png}
-								onSend={() => console.log('Reply sent')}
+								onSend={() => {
+									console.log('Reply sent');
+									setReplyAt(null);
+								}}
 								placeholder='Add a reply...'
 								initialValue={`@${replyTo.current} `}
 								focus
