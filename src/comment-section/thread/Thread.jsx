@@ -38,6 +38,7 @@ export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 								img={data.currentUser.image.png}
 								placeholder='Add a reply...'
 								initialValue={`@${replyTo.current} `}
+								focus
 							/>
 						)}
 					</div>
