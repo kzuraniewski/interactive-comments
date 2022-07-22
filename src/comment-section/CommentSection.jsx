@@ -12,12 +12,17 @@ export default function CommentSection({ currentUser, comments, openModal }) {
 				<Thread
 					key={index}
 					comment={comment}
-					replyAt={replyAt} setReplyAt={setReplyAt}
+					replyAt={replyAt}
+					setReplyAt={setReplyAt}
 					openModal={openModal}
 				/>
 			))}
 
-			<TextInput img={currentUser.image.png} placeholder='Add a comment...' />
+			<TextInput
+				img={currentUser.image.png}
+				placeholder='Add a comment...'
+				onSend={() => {}}
+			/>
 		</div>
 	);
 }
