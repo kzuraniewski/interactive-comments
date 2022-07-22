@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import TextInput from '../TextInput';
+import Comment from './Comment';
 import './Thread.css';
-import CommentWrapper from './CommentWrapper';
+import ThreadHead from './ThreadHead';
+import data from '../../data';
 
 export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
+	const repliesRef = useRef(null);
+	const replyTo = useRef(null);
+
 	return (
 		<>
 			<div className='Thread'>
-				<CommentWrapper comment={comment} replyAt={replyAt} setReplyAt={setReplyAt} openModal={openModal} />
+				<ThreadHead
+					comment={comment}
+					replyAt={replyAt}
+					setReplyAt={setReplyAt}
+					openModal={openModal}
+				/>
 
 				{comment.replies.length > 0 && (
-					<div className='Thread__replies'>
+					<div ref={repliesRef} className='Thread__replies'>
 						{comment.replies.map((reply, index) => (
-							<CommentWrapper
+							<Comment
 								key={index}
 								comment={reply}
-								replyAt={replyAt}
-								setReplyAt={setReplyAt}
 								openModal={openModal}
+								onReply={() => {
+									setReplyAt(repliesRef);
+									replyTo.current = reply.user.username;
+								}}
 							/>
 						))}
+
+						{repliesRef === replyAt && (
+							<TextInput
+								img={data.currentUser.image.png}
+								onSend={() => {
+									console.log('Reply sent');
+									setReplyAt(null);
+								}}
+								placeholder='Add a reply...'
+								initialValue={`@${replyTo.current} `}
+								focus
+							/>
+						)}
 					</div>
 				)}
 			</div>
