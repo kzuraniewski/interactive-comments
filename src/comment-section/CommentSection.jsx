@@ -3,18 +3,18 @@ import TextInput from './TextInput';
 import './CommentSection.css';
 import Thread from './thread/Thread';
 
-export default function CommentSection({ currentUser, comments, openModal }) {
+export default function CommentSection({ currentUser, comments, onOpenModal }) {
 	const [replyAt, setReplyAt] = useState(null);
 
 	return (
 		<div className='CommentSection'>
-			{comments.map((comment, index) => (
+			{comments.map((commentData, index) => (
 				<Thread
 					key={index}
-					comment={comment}
+					commentData={commentData}
 					replyAt={replyAt}
 					setReplyAt={setReplyAt}
-					openModal={openModal}
+					onOpenModal={onOpenModal}
 				/>
 			))}
 

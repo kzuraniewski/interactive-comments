@@ -8,7 +8,7 @@ import data from '../../data';
 import Textarea from '../Textarea';
 import Btn from '../Btn';
 
-export default function Comment({ comment, onReply = null, openModal, ...other }) {
+export default function Comment({ commentData, onReplyAction = null, onOpenModal, ...other }) {
 	const {
 		content,
 		createdAt,
@@ -18,10 +18,10 @@ export default function Comment({ comment, onReply = null, openModal, ...other }
 			username,
 		},
 		replyingTo,
-	} = comment;
+	} = commentData;
 
 	// check if the comment belongs to the current user
-	const currentUser = username === data.currentUser.username;
+	const isCurrentUser = username === data.currentUser.username;
 
 	const [editMode, setEditMode] = useState(false);
 	const [textareaValue, setTextareaValue] = useState(content);
@@ -32,7 +32,7 @@ export default function Comment({ comment, onReply = null, openModal, ...other }
 				img={img}
 				username={username}
 				createdAt={createdAt}
-				currentUser={currentUser}
+				currentUser={isCurrentUser}
 			/>
 
 			{editMode ? (
@@ -49,14 +49,14 @@ export default function Comment({ comment, onReply = null, openModal, ...other }
 			<KarmaCounter karma={score} />
 
 			{/* edit & delete for currentUser, reply otherwise */}
-			{currentUser ? (
+			{isCurrentUser ? (
 				<Actions
-					delete={openModal}
+					delete={onOpenModal}
 					// exitting edit mode through action will dismiss changes
-					edit={() => setEditMode((editMode) => !editMode)}
+					edit={() => setEditMode(editMode => !editMode)}
 				/>
 			) : (
-				<Actions reply={onReply} />
+				<Actions reply={onReplyAction} />
 			)}
 		</div>
 	);

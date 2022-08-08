@@ -5,7 +5,7 @@ import './Thread.css';
 import ThreadHead from './ThreadHead';
 import data from '../../data';
 
-export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
+export default function Thread({ commentData, replyAt, setReplyAt, onOpenModal }) {
 	const repliesRef = useRef(null);
 	const replyTo = useRef(null);
 
@@ -13,20 +13,20 @@ export default function Thread({ comment, replyAt, setReplyAt, openModal }) {
 		<>
 			<div className='Thread'>
 				<ThreadHead
-					comment={comment}
+					commentData={commentData}
 					replyAt={replyAt}
 					setReplyAt={setReplyAt}
-					openModal={openModal}
+					onOpenModal={onOpenModal}
 				/>
 
-				{comment.replies.length > 0 && (
+				{commentData.replies.length > 0 && (
 					<div ref={repliesRef} className='Thread__replies'>
-						{comment.replies.map((reply, index) => (
+						{commentData.replies.map((reply, index) => (
 							<Comment
 								key={index}
-								comment={reply}
-								openModal={openModal}
-								onReply={() => {
+								commentData={reply}
+								onOpenModal={onOpenModal}
+								onReplyAction={() => {
 									setReplyAt(repliesRef);
 									replyTo.current = reply.user.username;
 								}}

@@ -4,7 +4,7 @@ import Comment from './Comment';
 import TextInput from '../TextInput';
 import data from '../../data';
 
-export default function ThreadHead({ comment, replyAt, setReplyAt, openModal }) {
+export default function ThreadHead({ commentData, replyAt, setReplyAt, onOpenModal }) {
 	const [replyMode, setReplyMode] = useState(false);
 	const ref = useRef(null);
 
@@ -26,7 +26,11 @@ export default function ThreadHead({ comment, replyAt, setReplyAt, openModal }) 
 
 	return (
 		<div ref={ref} className='ThreadHead'>
-			<Comment comment={comment} onReply={handleReply} openModal={openModal} />
+			<Comment
+				commentData={commentData}
+				onReplyAction={handleReply}
+				onOpenModal={onOpenModal}
+			/>
 
 			{replyMode && (
 				<TextInput
