@@ -12,21 +12,26 @@ export default function ThreadHead({ comment, replyAt, setReplyAt, openModal }) 
 		setReplyMode(replyAt === ref);
 	}, [replyAt]);
 
+	const handleReply = () => {
+		setReplyAt(old => {
+			if (old === ref) return null;
+			return ref;
+		});
+	};
+
+	const handleSend = () => {
+		console.log('Reply sent');
+		setReplyAt(null);
+	};
+
 	return (
 		<div ref={ref} className='ThreadHead'>
-			<Comment
-				comment={comment}
-				onReply={() => setReplyAt(old => (old !== ref ? ref : null))}
-				openModal={openModal}
-			/>
+			<Comment comment={comment} onReply={handleReply} openModal={openModal} />
 
 			{replyMode && (
 				<TextInput
 					img={data.currentUser.image.png}
-					onSend={() => {
-						console.log('Reply sent');
-						setReplyAt(null);
-					}}
+					onSend={handleSend}
 					placeholder='Add a reply...'
 					focus
 				/>
