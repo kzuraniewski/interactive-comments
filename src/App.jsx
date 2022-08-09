@@ -4,8 +4,6 @@ import CommentSection from './comment-section/CommentSection';
 import ModalProvider from './comment-section/ModalProvider';
 
 export default function App() {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-
 	return (
 		<ModalProvider>
 			<div style={{ maxWidth: '700px', margin: '0 auto', padding: '25px' }}>
