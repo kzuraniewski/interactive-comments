@@ -7,8 +7,9 @@ import UserData from './UserData';
 import data from '../../data';
 import Textarea from '../Textarea';
 import Btn from '../Btn';
+import useModal from '../../lib/useModal';
 
-export default function Comment({ commentData, onReplyAction = null, onOpenModal, ...other }) {
+export default function Comment({ commentData, onReplyAction = null, ...other }) {
 	const {
 		content,
 		createdAt,
@@ -25,6 +26,16 @@ export default function Comment({ commentData, onReplyAction = null, onOpenModal
 
 	const [editMode, setEditMode] = useState(false);
 	const [textareaValue, setTextareaValue] = useState(content);
+
+	const openModal = useModal();
+
+	const handleDelete = () => {
+		openModal({
+			title: 'Delete comment',
+			description:
+				"Are you sure you want to delete this comment? This will remove the comment and can't be undone.",
+		});
+	};
 
 	return (
 		<div className='Comment' {...other}>
@@ -51,7 +62,7 @@ export default function Comment({ commentData, onReplyAction = null, onOpenModal
 			{/* edit & delete for currentUser, reply otherwise */}
 			{isCurrentUser ? (
 				<Actions
-					delete={onOpenModal}
+					delete={handleDelete}
 					// exitting edit mode through action will dismiss changes
 					edit={() => setEditMode(editMode => !editMode)}
 				/>

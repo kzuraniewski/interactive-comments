@@ -3,7 +3,7 @@ import TextInput from './TextInput';
 import './CommentSection.css';
 import Thread from './thread/Thread';
 
-export default function CommentSection({ currentUser, comments, onOpenModal }) {
+export default function CommentSection({ currentUser, comments }) {
 	const [replyAt, setReplyAt] = useState(null);
 
 	return (
@@ -14,7 +14,6 @@ export default function CommentSection({ currentUser, comments, onOpenModal }) {
 					commentData={commentData}
 					replyAt={replyAt}
 					setReplyAt={setReplyAt}
-					onOpenModal={onOpenModal}
 				/>
 			))}
 
