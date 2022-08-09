@@ -16,7 +16,7 @@ export default function ModalProvider({ children }) {
 	const openModal = newOptions => {
 		setIsModalOpen(true);
 
-		for (const key of Object.keys[defaultOptions]) {
+		for (const key of Object.keys(defaultOptions)) {
 			newOptions[key] ??= defaultOptions[key];
 		}
 
