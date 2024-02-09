@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import TextInput from './TextInput';
 import './CommentSection.css';
 import Thread from './thread/Thread';
+import { Comment, User } from '@/data';
 
-export default function CommentSection({ currentUser, comments }) {
+export type CommentSectionProps = {
+	currentUser: User;
+	comments: Comment[];
+};
+
+export default function CommentSection({ currentUser, comments }: CommentSectionProps) {
 	const [replyAt, setReplyAt] = useState(null);
 
 	return (

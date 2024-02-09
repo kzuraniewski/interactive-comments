@@ -1,4 +1,29 @@
-module.exports = {
+export type User = {
+	username: string;
+	image: {
+		png: string;
+		webp: string;
+	};
+};
+
+export type Comment = {
+	id: number;
+	content: string;
+	createdAt: string;
+	score: number;
+	user: User;
+
+	// FIXME: needs to store references, or the whole comment needs to have assigned root id to avoid nesting
+	replies?: Comment[];
+	replyingTo?: string;
+};
+
+export type ThreadData = {
+	currentUser: User;
+	comments: Comment[];
+};
+
+const threadData: ThreadData = {
 	currentUser: {
 		image: {
 			png: require('./images/avatars/image-juliusomo.png'),
@@ -70,3 +95,5 @@ module.exports = {
 		},
 	],
 };
+
+export default threadData;
