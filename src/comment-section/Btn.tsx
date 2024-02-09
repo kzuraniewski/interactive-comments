@@ -2,7 +2,16 @@ import React from 'react';
 import './Btn.css';
 import classNames from 'classnames';
 
-export default function Btn({ text, theme = 'normal', ...other }) {
+// TODO: Rename to Button
+
+export type BtnTheme = 'normal' | 'danger' | 'cancel';
+
+export type BtnProps = JSX.IntrinsicElements['button'] & {
+	text: string;
+	theme?: BtnTheme;
+};
+
+export default function Btn({ text, theme = 'normal', ...other }: BtnProps) {
 	return (
 		<button
 			className={classNames('Btn', {
