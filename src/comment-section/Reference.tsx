@@ -1,7 +1,11 @@
 import React from 'react';
 import './Reference.css';
 
-export default function Reference({ username }) {
+export type ReferenceProps = {
+	username: string;
+};
+
+export default function Reference({ username }: ReferenceProps) {
 	return (
 		<a href='' className='Reference'>
 			{username}
